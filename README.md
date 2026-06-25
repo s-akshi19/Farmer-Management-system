@@ -1,5 +1,11 @@
 # 🌾 Farmer Management System
 
+## 🌐 Live Demo
+
+🔗 **[Live Website](https://farmer-management-system-pr6lk8tpd-sakshi-projects2.vercel.app)**
+
+> Backend API: https://farmer-management-system-2vg1.onrender.com
+
 A full-stack web platform for managing 100+ farmer records with crop tracking, land management, and live market price updates — built with the **MERN stack** (MongoDB, Express, React, Node.js).
 
 ---
