@@ -1,5 +1,7 @@
 import axios from 'axios';
-const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api', withCredentials: true });
+// const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api', withCredentials: true });
+
+const api = axios.create({ baseURL: 'https://farmer-management-system-2vg1.onrender.com/api',
 api.interceptors.request.use(cfg => { const t = localStorage.getItem('fm_token'); if (t) cfg.headers.Authorization = `Bearer ${t}`; return cfg; });
 api.interceptors.response.use(r => r, err => { if (err.response?.status === 401) { localStorage.removeItem('fm_token'); localStorage.removeItem('fm_user'); } return Promise.reject(err); });
 export default api;
