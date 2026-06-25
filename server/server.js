@@ -14,7 +14,16 @@ connectDB();
 
 const app = express();
 app.use(helmet());
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5174', credentials: true }));
+// app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5174', credentials: true }));
+app.use(cors({
+  origin: [
+    process.env.CLIENT_URL,
+    'https://farmer-management-system-mylkjtvqp-sakshi-projects2.vercel.app',
+    'http://localhost:5174'
+  ],
+  credentials: true
+}));
+
 if (process.env.NODE_ENV !== 'production') app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
